@@ -27,14 +27,14 @@ const pages = [
     url: "/imageGeneration",
   },
   {
-    key: "textCompletion",
-    page: "Text Completion",
-    url: "/textCompletion",
+    key: "translation",
+    page: "Translation",
+    url: "/translation",
   },
   {
-    key: "speechToText",
-    page: "Speech to Text",
-    url: "/speechToText",
+    key: "transcription",
+    page: "Transcription",
+    url: "/transcription",
   },
 ];
 

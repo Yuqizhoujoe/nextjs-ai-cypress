@@ -17,7 +17,7 @@ import DirectionsIcon from "@mui/icons-material/Directions";
 
 // react query
 import { useMutation } from "@tanstack/react-query";
-import { handleOepnAIAPI, openAIAPIEnum } from "../../../shared/openai/openAI";
+import { handleOpenAIAPI, openAIAPIEnum } from "../../../shared/openai/openAI";
 import Paper from "@mui/material/Paper";
 import { Simulate } from "react-dom/test-utils";
 import load = Simulate.load;
@@ -73,13 +73,15 @@ const ImageGeneration = () => {
   const imageGenerationMutation = useMutation({
     mutationFn: (userInput: string) => {
       setLoading(true);
-      return handleOepnAIAPI({
+      return handleOpenAIAPI({
         type: openAIAPIEnum.GENERATE_IMAGE,
         data: userInput,
       });
     },
     onSuccess: (data, userInput, context) => {
       console.log(data);
+      if (!Array.isArray(data)) return;
+
       const images: Image[] = data.map((imageString, index) => {
         return {
           data: imageString,
@@ -158,7 +160,7 @@ const ImageGeneration = () => {
         <TextField
           fullWidth
           label="enter something..."
-          id="fullWidth"
+          data-testid={`${COMPONENT_NAME}_chat_box`}
           value={userInput}
           onChange={handleInput}
           onKeyDown={handleKeyDown}
