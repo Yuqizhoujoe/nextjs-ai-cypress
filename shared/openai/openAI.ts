@@ -42,7 +42,7 @@ interface Options {
 }
 
 function breakLines(text: string): string {
-  return text.replace(/。|:/g, "<br>");
+  return text.replace(/。|:/g, `${text}<br>`);
 }
 
 async function getChatComplete(prompt: string, options: Options) {

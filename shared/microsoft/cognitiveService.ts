@@ -1,5 +1,6 @@
 import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 import { ResultReason } from "microsoft-cognitiveservices-speech-sdk";
+import { analytics } from "../firebase/firebase";
 
 interface Options {
   handleResult: any;
