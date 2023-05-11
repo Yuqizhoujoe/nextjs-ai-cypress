@@ -37,3 +37,11 @@ next-env.d.ts
 # cypress
 /cypress/screenshots
 /cypress/videos
+
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/nextjs-ai-cypress.iml
+/.idea/prettier.xml
+/.idea/vcs.xml
+
+/data
